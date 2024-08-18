@@ -1,0 +1,102 @@
+#include <iostream>
+
+using namespace std;
+
+class ChandigarhUniveristy
+{
+protected:
+    long long int supportNumber;
+    string universityName;
+    string address;
+
+public:
+    ChandigarhUniveristy()
+    {
+        supportNumber = 9833546438;
+        universityName = "Chandigarh University";
+        address = "Gharuan, Kharar, Punjab, India";
+    }
+     friend void add( ChandigarhUniveristy &c)   ;
+     friend void display(ChandigarhUniveristy c);
+};
+void display(ChandigarhUniveristy c)
+     {
+       cout<< c.address;
+     }
+
+class HRDepartment : public ChandigarhUniveristy
+{
+    long long int departmentNumber;
+    string address;
+
+public:
+    HRDepartment()
+    {
+        departmentNumber = 6367543399;
+        address = "Block 6, ";
+        address.append(ChandigarhUniveristy::universityName);
+        address.append(", ");
+        address.append(ChandigarhUniveristy::address);
+    }
+};
+
+class MarketingDepartment : public ChandigarhUniveristy
+{
+    long long int departmentNumber;
+    string address;
+
+public:
+    MarketingDepartment()
+    {
+        departmentNumber = 6367541139;
+        address = "Block 7, ";
+        address.append(ChandigarhUniveristy::universityName);
+        address.append(", ");
+        address.append(ChandigarhUniveristy::address);
+    }
+};
+
+class ExamDepartment : public ChandigarhUniveristy
+{
+    long long int departmentNumber;
+    string address;
+
+public:
+    ExamDepartment()
+    {
+        departmentNumber = 9967541139;
+        address = "Block 8, ";
+        address.append(ChandigarhUniveristy::universityName);
+        address.append(", ");
+        address.append(ChandigarhUniveristy::address);
+    }
+};
+
+class AdminDepartment : public ChandigarhUniveristy
+{
+    long long int departmentNumber;
+    string address;
+
+public:
+    AdminDepartment()
+    {
+        departmentNumber = 6367542239;
+        address = "Block 1, ";
+        address.append(ChandigarhUniveristy::universityName);
+        address.append(", ");
+        address.append(ChandigarhUniveristy::address);
+        
+    }
+};
+
+int main()
+{
+    ChandigarhUniveristy cdg;
+    AdminDepartment adminDepartment;
+    HRDepartment hrDepartment;
+    ExamDepartment examDepartment;
+    MarketingDepartment marketingDepartment;
+   cout<<"adress is ";
+   display(cdg);
+    return 0;
+}
